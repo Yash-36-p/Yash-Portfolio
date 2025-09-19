@@ -1,0 +1,324 @@
+* {
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+
+:root{
+  --bg:#0364ff; --card:#0b1220; --accent:#00a6ff; --muted:#ffffff; --glass: rgba(255,255,255,0.03);
+  --max-width:1100px;
+  --radius:12px;
+  --ff: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:var(--ff); background:linear-gradient(180deg,#3a67da 0%, #071427 60%); color:#e6eef6; -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale; line-height:1.5; padding:24px 16px;
+  display:flex; justify-content:center;
+}
+.wrap{width:100%; max-width:var(--max-width)}
+header{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:26px;
+}
+.logo{display:flex; gap:12px; align-items:center}
+.logo .avatar{width:56px; height:56px; border-radius:12px; overflow:hidden; background:linear-gradient(135deg,var(--accent),#7c3aed); display:flex; align-items:center; justify-content:center; font-weight:700}
+nav{display:flex; gap:12px; align-items:center}
+nav a{color:var(--muted); text-decoration:none; font-weight:600}
+nav a:hover{color:var(--accent)}
+
+.hero{background:linear-gradient(180deg, rgba(255,255,255,0.03), transparent); padding:28px; border-radius:var(--radius); display:flex; gap:28px; align-items:center}
+.hero-left{flex:1}
+.title{font-size:28px; margin:0 0 6px}
+.subtitle{margin:0 0 14px; color:var(--muted)}
+.cta{display:flex; gap:10px}
+.btn{background:var(--accent); color:#052026; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none}
+.btn.outline{background:transparent; border:1px solid rgba(255, 19, 19, 0.06); color:var(--muted)}
+
+.hero-right{width:220px; text-align:center}
+.profile-photo{width:200px; height: 200px; border-radius:18px; overflow:hidden; margin:0 auto 10px; background:linear-gradient(135deg,#1f2937,#111827); display:flex; align-items:center; justify-content:center}
+.profile-photo img{width:100%; height:100%; object-fit:cover}
+
+main{margin-top:18px; display:grid; grid-template-columns: 1fr 360px; gap:18px}
+@media (max-width:900px){main{grid-template-columns:1fr} header{flex-direction:column; align-items:flex-start} .hero{flex-direction:column} .hero-right{width:100%} nav{flex-wrap:wrap}}
+
+/* cards */
+.card{background:var(--card); padding:16px; border-radius:12px; box-shadow: 0 6px 18px rgba(2,6,23,0.6)}
+h3{margin:0 0 10px}
+.about p{color:var(--muted)}
+
+/* skills */
+.skills{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.skill{display:flex; flex-direction:column}
+.skill .meta{display:flex; justify-content:space-between; font-weight:600; color:var(--muted); margin-bottom:6px}
+.bar{background:var(--glass); height:10px; border-radius:8px; overflow:hidden}
+.bar > span{display:block; height:100%; border-radius:8px; background:linear-gradient(90deg,var(--accent), #7c3aed); width:60%}
+
+.thumb img {
+  width: 100%;        
+ height: auto;       
+  object-fit: cover;  
+  border-radius: 8px; 
+}
+/* projects */
+.projects{display:grid; grid-template-columns:1fr; gap:12px}
+.proj{display:flex; gap:12px; align-items:flex-start}
+.proj .thumb{width:80px; height:60px; border-radius:8px; overflow:hidden; background:#011627; display:flex; align-items:center; justify-content:center; color:var(--muted)}
+.proj .info h4{margin:0 0 6px}
+.proj .info p{margin:0; color:var(--muted); font-size:13px}
+
+/* contact */
+.contact-list{display:flex; flex-direction:column; gap:8px}
+.contact-list a{color:var(--muted); text-decoration:none; font-weight:600}
+
+footer{margin-top:18px; text-align:center; color:var(--muted); font-size:13px}
+
+/* small helpers */
+.chips{display:flex; gap:8px; flex-wrap:wrap}
+.chip{padding:6px 8px; border-radius:999px; background:rgba(255,255,255,0.03); color:var(--muted); font-weight:700}
+
+/* smooth scroll */
+html{scroll-behavior:smooth}
+
+.Edu_address {
+    gap: 8px;
+    align-items: right;
+    font-size: 14px;
+    text-decoration:dashed;
+    margin-top: 4px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background: #000000; /* optional secondary color */
+    color: #fff;
+
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+
+}
+
+.btn.outline:hover {
+  background: var(--accent);
+  color: #100909;
+}
+
+.hero-left, .hero-right {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+}
+
+.hero-left {
+  animation-delay: 0.3s;
+}
+
+.hero-right {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  /* background: #fff; */ /* remove or comment this line */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.projects .proj .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.projects .proj .thumb img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.chip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 2px;
+  cursor: default;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.chip:hover {
+  transform: scale(1.1);
+  background: #ff0000; /* optional secondary color */
+}
+
+.social-icons i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.3);
+  color: #ff0000; /* optional highlight color */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  display: block;
+  height: 100%;
+  width: 0; /* start from 0 */
+  background: linear-gradient(90deg, #fbff00, #ff0909); /* gradient for style */
+  border-radius: 5px;
+  transition: width 2s ease-in-out; /* smooth animation */
+}
+
+.certificates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* reduced spacing */
+  justify-content: center;
+}
+
+.cert {
+  width: 200px; /* smaller card width */
+  background: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.cert img {
+  width: 100%;
+  height: 120px; /* smaller image */
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.cert h4 {
+  font-size: 14px; /* smaller text */
+  margin: 8px 0 4px;
+}
+
+.cert p {
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+
+/* Fullscreen Modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* keep behind content */
+}
+
+.navg {
+  text-decoration: none;
+  font-size: large;
+  font-weight: 900;
+  padding: 6px 12px; /* added padding for better click area */
+  border-radius: 8px; /* rounded corners */
+    background: rgba(0, 0, 0, 0.704); /* subtle background */
+    transition: background 0.3s ease, color 0.3s ease; /* smooth transitions */
+    hover: background 0.3s ease, color 0.3s ease; /* smooth transitions */
+    
+}
